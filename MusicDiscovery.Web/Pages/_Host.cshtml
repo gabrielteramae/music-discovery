@@ -1,0 +1,17 @@
+@page "/"
+@namespace MusicDiscovery.Web.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicDiscovery</title>
+    <base href="~/" />
+</head>
+<body>
+    <component type="typeof(MusicDiscovery.Web.Shared.App)" render-mode="ServerPrerendered" />
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

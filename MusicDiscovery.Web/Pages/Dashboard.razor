@@ -1,0 +1,45 @@
+@page "/"
+@using System.Net.Http.Json
+@inject IHttpClientFactory HttpClientFactory
+
+<h3>Suas playlists sugeridas</h3>
+
+@if (_suggestions is null)
+{
+    <p><em>Carregando sugestões de organização...</em></p>
+}
+else if (_suggestions.Count == 0)
+{
+    <p>Nenhuma sugestão ainda — sincronize sua biblioteca do Spotify primeiro.</p>
+}
+else
+{
+    <div class="suggestion-grid">
+        @foreach (var suggestion in _suggestions)
+        {
+            <div class="suggestion-card">
+                <h4>@suggestion.SuggestedName</h4>
+                <p>@suggestion.TrackCount faixas</p>
+                <ul>
+                    @foreach (var track in suggestion.SampleTracks)
+                    {
+                        <li>@track.Name — @track.ArtistName</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private List<PlaylistSuggestionDto>? _suggestions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var client = HttpClientFactory.CreateClient("MusicDiscoveryApi");
+        _suggestions = await client.GetFromJsonAsync<List<PlaylistSuggestionDto>>("api/playlists/suggest-organization");
+    }
+
+    private record PlaylistSuggestionDto(string SuggestedName, int TrackCount, List<SampleTrackDto> SampleTracks);
+    private record SampleTrackDto(string Name, string ArtistName);
+}
