@@ -46,5 +46,3 @@ cd MusicDiscovery.Api && dotnet ef database update && dotnet run
 
 # Blazor (outro terminal)
 cd MusicDiscovery.Web && dotnet run
-
-© 2026 Gabriel Teramae Chan
