@@ -1,4 +1,4 @@
-# MusicDiscovery
+# Music Discovery
 
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-8.0-purple)
 ![Blazor](https://img.shields.io/badge/Blazor-Server-blue)
