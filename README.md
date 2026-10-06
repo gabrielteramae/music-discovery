@@ -36,7 +36,8 @@ Pré-requisitos: [.NET 8 SDK](https://dotnet.microsoft.com/download) e uma conta
 git clone https://github.com/gabrielteramae/music-discovery.git
 cd music-discovery
 
-# configure Spotify:ClientId em appsettings.Development.json
+cp MusicDiscovery.Api/appsettings.Development.json.example MusicDiscovery.Api/appsettings.Development.json
+# coloque o ClientId do Spotify nesse arquivo. Não commite o segredo.
 
 dotnet restore
 dotnet build
