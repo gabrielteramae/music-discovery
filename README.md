@@ -33,7 +33,7 @@ Uma solução estruturada que combina uma Web API robusta em .NET com uma interf
 Pré-requisitos: [.NET 8 SDK](https://dotnet.microsoft.com/download) e uma conta no [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
 
 ```bash
-git clone [https://github.com/gabrielteramae/music-discovery.git](https://github.com/gabrielteramae/music-discovery.git)
+git clone https://github.com/gabrielteramae/music-discovery.git
 cd music-discovery
 
 # configure Spotify:ClientId em appsettings.Development.json
